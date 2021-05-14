@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row.display-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row.display-flex>[class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .centerImage {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .rightColumn {
+            margin-top: 4%;
+            background-color: rgb(230, 74, 165);
+            border-radius: 35px 35px 0 0;
+        }
+
+        .imageProfile {
+            width: 60%;
+            border-radius: 50%;
+            margin-left: 3%;
+            margin-top: 20%;
+            margin-bottom: 10%;
+        }
+
+        .menu {
+            /*padding-left: 10%;
+            padding-right: 10%;*/
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            font-weight: bold;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .inputProfile {
+            border-radius: 0;
+            border-width: 0 0 1px 0;
+            border-color: #353d39;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 3%;
+
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        ::placeholder {
+            color: #b2b2b2;
+            font-size: 11px;
+            padding-left: 8px;
+        }
+
+        p {
+            margin: 0
+        }
+
+        .profileButton {
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            background-color: #3d3935;
+            padding: 1.5% 5.5% 1.5% 5.5%;
+            font-size: 11px;
+        }
+
+        td {
+            border: 2px solid white;
+        }
+
+        .centerProfile {
+            text-align: left;
+            padding: 0;
+            position: absolute;
+            left: 45%;
+            font-size: 1.25vw !important;
+        }
+
+        .fullName {
+            font-size: 3vw !important;
+            text-transform: uppercase;
+        }
+
+        .infoProfile {
+            line-height: 1.6vw;
+        }
+
+        #footer {
+            font-size: 1vw;
+        }
+
+        button:focus {
+            background-color: #d14124;
+            outline: 0;
+        }
+
+        #mainContent{
+            top:
+        }
+
+        @media screen and (max-width: 990px) {
+            body {
+                font-size: 3vw !important;
+            }
+
+            .infoProfile {
+                line-height: 5vw !important;
+            }
+
+            .imgWFF {
+                width: 10%;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                align-items: center !important;
+            }
+
+            #mainContent {
+                margin-top: 50% !important;
+            }
+
+            .imageProfile {
+                margin-top: 25%;
+                width: 55% !important;
+                top: 4.8% !important;
+                left: 21% !important;
+                margin-right: 0 !important;
+                position: absolute !important;
+                align-items: center !important;
+            }
+
+
+            .centerProfile {
+                top: 4.8% !important;
+                left: 45% !important;
+                margin-right: 0 !important;
+                position: absolute !important;
+                align-items: center !important;
+                font-size: 3.5vw !important;
+                line-height: 6vw !important;
+            }
+
+            .rightColumn {
+                margin-top: 0% !important;
+                background-color: #cc731a !important;
+                border-radius: 0 !important;
+            }
+
+            .mobileRectangle {
+                height: 30% !important;
+                width: 100% !important;
+                top: 0% !important;
+                background-color: #c9e917 !important;
+                position: absolute !important;
+
+            }
+
+            .mobileRectangleWhite {
+                height: 100% !important;
+                width: 100% !important;
+                top: 20% !important;
+                background-color: rgb(66, 41, 209) !important;
+                position: absolute !important;
+                border-radius: 45px 45px 0 0 !important;
+
+            }
+
+            .fullName {
+                color: #fff !important;
+                font-size: 7vw !important;
+            }
+
+            .inputProfile {
+                line-height: 4.5vw !important;
+            }
+
+            #footer {
+                font-size: 2.4vw !important;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body style="
+    background-color: #3d3935; 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 1.3vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding:0;">
+
+    <!--<div style="background-color: #3d3935; ">-->
+    <div class="container-fluid" style="padding-left: 0 !important; margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important;">
+        <div class="row" style="margin-right: 0 !important; margin-left:0 !important; padding:0 !important; ">
+            
+            <div class="col-lg-6 d-none d-md-block">
+                <div class="centerImage align-items-center">
+                    <img src="https://pbs.twimg.com/profile_images/943228290680029184/FNa3xeOd_400x400.jpg" alt="WFF"
+                        width=50%>
+                </div>
+            </div>
+
+            <div class="col-lg-5 rightColumn" style="margin-right: 0 !important; padding-right:0 !important; padding-left:0 !important;">
+                <div class="mobileRectangle"></div>
+                <div class="mobileRectangleWhite"></div>
+                <div class="row" style="padding-bottom: 5%; margin-right: 0 !important; padding-right:0 !important; padding-left:0 !important;">
+
+                    <div class="col-6">
+                        <img src="https://st2.depositphotos.com/3277955/7532/v/950/depositphotos_75329773-stock-illustration-young-african-american-man-square.jpg"
+                            alt="profileImage" class="imageProfile">
+                    </div>
+
+                    <div class="col-6 centerProfile">
+                        <br>
+                        <br>
+                        <h2 class="fullName">Nathália Barros</h2>
+                        <p class="infoProfile">email.address@something.com</p>
+                        <p class="infoProfile">Gender: </p>
+                        <p class="infoProfile">Location: </p>
+                        <br>
+                    </div>
+                </div>
+                
+
+                <div id="mainContent" style="position: relative; z-index: 2;">
+                    
+                    <div id="menuTable">
+                        <table class="menu">
+                            <tr>
+                                <th style="color:#d14124; padding-left: 15px; padding-right: 15px;">PROFILE</th>
+                                <th style="padding-left: 15px; padding-right: 15px;">PRIVACY</th>
+                                <th>COMMUNICATION</th>
+                            </tr>
+                            <tr style="line-height: 2.5px; ">
+                                <td style="background-color: #d14124;"> &nbsp;</td>
+                                <td style="background-color: #e0e0e0;"> &nbsp;</td>
+                                <td style="background-color: #e0e0e0;"> &nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="profileInfo">
+                        <br>
+                        <p class="menu">Edit Your Profile Information Below</p>
+                        <input type="text" id="firstName" placeholder="First Name *" class="inputProfile"
+                            required></input>
+                        <input type="text" id="lastName" placeholder="Last Name *" class="inputProfile"
+                            required></input>
+                        <input type="email" id="emailAddress" placeholder="Email Address *" class="inputProfile"
+                            required></input><br>
+                        <input type="tel" id="telephone" placeholder="Telephone *" class="inputProfile"
+                            required></input><br>
+                        <br>
+                        <br>
+                        <button id="saveButton" class="profileButton">SAVE</button>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div id="footer">
+                        <a href="https://wildforkfoods.com" style="color:#3d3935;"> Click here to return to
+                            your
+                            profile dashboard</a>
+                        <br>
+                        <br>
+
+                        <div class="row offset-4">
+                            <div class="col-6" style="padding: 0; line-height: 2.5vw;">
+                                <a href="https://wildforkfoods.com" style="color:#3d3935; align-items: right;">
+                                    www.wildforkfoods.com</a>
+                                <br>
+                                <a href="https://wildforkfoods.com" style="color:#d14124; font-weight:bolder;">
+                                    © 2021 WILD FORK FOODS</a>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col-1 offset-1 imgWFF" style="padding: 0">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/89/77/e8/8977e8dc-8ab5-a4d5-81bb-458c232cffed/source/60x60bb.jpg"
+                                    alt="WFF" width=110%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--</div>-->
+
+    <script type="text/javascript">
+       /* const getFontSize = (textLength) => {
+            const baseSize = 9;
+            if (textLength >= baseSize) {
+                textLength = baseSize - 2;
+            }
+            const fontSize = baseSize - textLength;
+            return `${fontSize*0.018}vw`;
+        };
+
+        const boxes = document.querySelectorAll(".fullName h2");
+
+        boxes.forEach((fullName) => {
+            fullName.style.fontSize = getFontSize(fullName.textContent.length);
+        });
+*/
+
+
+    </script>
+</body>
+
+</html>
